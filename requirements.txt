@@ -1,5 +1,4 @@
 pandas
 plotly
-make_subplots
 plotly.express
 streamlit
