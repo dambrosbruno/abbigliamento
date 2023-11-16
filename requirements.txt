@@ -1,5 +1,4 @@
 pandas
-plotly.graph_objs
 plotly
 make_subplots
 plotly.express
