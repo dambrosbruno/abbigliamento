@@ -1,0 +1,5 @@
+pandas
+plotly.graph_objs
+plotly.subplots import make_subplots
+plotly.express
+streamlit
