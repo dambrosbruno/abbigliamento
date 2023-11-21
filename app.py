@@ -60,7 +60,6 @@ Infine, abbiamo terminato con un nuovo set di dati di 6310 righe e 6 colonne (da
 Abbiamo scelto di effettuare un'analisi esplorativa solo sulle vendite e
 profitti dei prodotti più venduti nel periodo da marzo 2017 a
 Marzo 2019. Questa opzione è stata scelta per ragioni di riduzione dell'analisi.
-In altre parole, non ci siamo concentrati sui negozi e sulle categorie di prodotto.
 ''')
 
 st.write('Ecco il nostro set di dati pulito:')
@@ -68,7 +67,7 @@ st.write('Ecco il nostro set di dati pulito:')
 with st.expander('Data Set'):
     st.dataframe(df)
 
-st.write('''And here is our data cleaning code:''')
+st.write('''Ed ecco il nostro codice di pulizia dei dati:''')
 
 with st.expander('Data cleaning'):
     st.code('''
@@ -121,7 +120,7 @@ df1.to_csv(path_or_buf='store.csv', sep=',', index=False)
 ''')
 
 #-----------------------------------------------------------------------------------
-st.header('_1. Come è il comportamento dei primi 10 articoli più venduti nel periodo?_')
+st.header('_1. Come è stato il comportamento dei primi 10 articoli più venduti nel periodo?_')
 
 st.write('''Controliamo come sono le vendite da marzo 2017 a marzo 2019.''')
 
@@ -154,16 +153,16 @@ Una rapida occhiata a questo grafico ci mostra alcune informazioni:
 ''')
 
 #-----------------------------------------------------------------------------------
-st.header('_2. Come è stato il comportamento dei primi 10 articoli più profitti nel periodo?_')
+st.header('_2. Come si sono comportati nel periodo i 10 articoli più redditizi?_')
 
-st.write('''Vediamo come è il profitto da marzo 2017 a marzo 2019.''')
+st.write('''Vediamo come è stato il profitto da Marzo 2017 fino Marzo 2019.''')
 
 fig2 = px.line(
     data_frame=df, 
     x="date", 
     y='total', 
     color='item', 
-    title='I 10 ARTICOLI PIÙ PROFITTI DURANTE IL PERIODO')
+    title='I 10 ARTICOLI PIÙ REDDITIZI DURANTE IL PERIODO')
 fig2.update_layout(
     font_size=10, 
     paper_bgcolor='#32004C', 
@@ -181,11 +180,11 @@ st.write('''
 ''')
 
 #-------------------------------------------------------
-st.header('_3. Confronto tra gli articoli più venduti e redditizi per stagione_')
+st.header('_3. Confronto tra gli articoli più venduti e più redditizi per stagione_')
 
 st.write('''
-Visualizziamo questi dati divisi per stagioni. Dal momento che stiamo lavorando con i dati dell'abbigliamento
-settore, e questo settore cambia stagionalmente i suoi prodotti, è interessante e corretto da vedere
+Visualizziamo questi dati divisi per stagioni. Dal momento che stiamo lavorando con i dati del setore di abbigliamento
+, e questo settore cambia stagionalmente i suoi prodotti, è interessante e corretto da controllare 
 il comportamento dei dati per stagione.
 ''')
 
@@ -233,7 +232,7 @@ for i, (period_name, top_10_products_total) in enumerate(results_total.items(), 
     fig3.add_trace(trace_total, row=row_total, col=col_total)
 
 fig3.update_layout(
-    title_text="ARTICOLI PIÙ VENDUTI E PIÙ PROFITTI PER STAGIONE",
+    title_text="ARTICOLI PIÙ VENDUTI E PIÙ REDDITIZI PER STAGIONE",
     font_size=12,
     paper_bgcolor='#32004C',
     plot_bgcolor='#712C94',
@@ -286,7 +285,7 @@ st.header('_4. Correlazione tra vendita e temperatura_')
 st.write('''
 Uno dei dati più importanti per l'industria della moda sono i dati climatici.
 È estremamente importante disporre di serie di dati storici su pioggia, temperatura, vento, ecc.,
-In questo modo puoi pianificare una collezione moda in modo ottimizzato, a partire dalla scelta
+perchè in questo modo si può pianificare una collezione fashion in modo ottimizzato, a partire dalla scelta
 dalle tipologie di tessuti più adatte al design finale del prodotto.
 Pertanto in questo dataset inseriamo i dati relativi alla temperatura media della città in questione,
 nel periodo storico di vendita degli articoli.
@@ -343,13 +342,13 @@ il che significa che esiste effettivamente una correlazione tra queste due varia
 ''')
 
 #------------------------------------------------------------------------------------------
-st.header('_5. Dopo tutto, quali sono i vestiti?_')
+st.header('_5. Dopo tutto, quali sono i nomi dei vestiti?_')
 
 st.write('''
 Ora che abbiamo fatto una breve analisi esplorativa, possiamo scoprire quali sono gli 
 abiti più venduti e più redditizi.
 \n
-Sulla base delle informazioni precedenti, possiamo provare a indovinare il nome dell'articolo più venduto e quale è il più redditizio.
+Sulla base delle informazioni precedenti, possiamo provare a indovinare il nome dell'articolo più venduto e il più redditizio.
 \n
 Abbiamo visto che:
 \n
